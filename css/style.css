@@ -17,15 +17,16 @@
 
 body {
   background: #2d004b;
-  font: 16px Proxima-Nova, sans-serif;
+  font-family: Proxima-Nova, sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  padding: 100px 0;
+  padding: 6.25rem 0;
 }
 
-div {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 }
 
 /*Container for featured cards to set max width similar to existing image on site.*/
@@ -36,33 +37,34 @@ div {
 }
 
 /*Styling for all cards. Bottom padding using viewport width so that it scales with card widths - reduces dead space between text and image. Bottom margin adds gap between cards, using viewport width to scale with card sizes.*/
-.trusted-numbers > div {
+.trusted-numbers .trusted-card {
+  background-repeat: no-repeat;
   border-radius: 0.5rem;
-  font-size: 18px;
-  height: 400px;
+  font-size: 1.125rem;
+  height: 25rem;
   padding: 1.438rem 1.438rem 90vw;
   margin: 0 auto 3vw;
 }
 
 /*Bottom margin not needed for last card.*/
-.trusted-numbers > div:last-of-type {
+.trusted-numbers .trusted-card:last-of-type {
   margin-bottom: 0;
 }
 
-.trusted-numbers p {
+.trusted-card p {
   margin-top: 0;
 }
 
 /*Styling for large stats text - font size using viewport width so that it scales with card widths.*/
-.trusted-numbers span {
+.trusted-card .stat {
   font-size: 12vw;
   font-weight: 900;
-  letter-spacing: -3px;
+  letter-spacing: -0.188rem;
 }
 
 /*Styling for 'Guests' card. Image is SVG for scalability, set as div background for bottom positioning. Background and color picked from original image. Rotated to match original image.*/
 .guests {
-  background: url("../assets/img/clap.svg") no-repeat #17FF00;
+  background: url("../assets/img/clap.svg") #17FF00;
   background-position: left 101%;
   background-size: 85% auto;
   color: #064000;
@@ -72,7 +74,7 @@ div {
 
 /*Styling for 'Countries' card. Image is SVG for scalability, set as div background for bottom positioning. Background and color picked from original image. Rotated to match original image.*/
 .countries {
-  background: url("../assets/img/globe.svg") no-repeat #E800B8;
+  background: url("../assets/img/globe.svg") #E800B8;
   background-position: left 101%;
   background-size: 100% auto;
   color: #400033;
@@ -82,7 +84,7 @@ div {
 
 /*Styling for 'Darts' card. Image is SVG for scalability, set as div background for bottom positioning. Background and color picked from original image. Rotated to match original image.*/
 .darts {
-  background: url("../assets/img/dart.svg") no-repeat #0088FF;
+  background: url("../assets/img/dart.svg") #0088FF;
   background-position: 0 80%;
   background-size: 90% auto;
   color: #00213f;
@@ -93,19 +95,19 @@ div {
 /* Medium and up (640px >) */
 @media screen and (min-width: 40em) {
   /*Styling for all cards. Left float added so that cards sit side-by-side rather than stacking. Right margin added to space cards similarly to original image.*/
-  .trusted-numbers > div {
-    float:left;
+  .trusted-numbers .trusted-card {
+    float: left;
     margin: 0 1% 0 0;
     padding: 1.438rem
   }
 
   /*Right margin not needed for last card.*/
-  .trusted-numbers > div:last-of-type {
+  .trusted-numbers .trusted-card:last-of-type {
     margin-right: 0;
   }
 
   /*Styling for large stats text over 640px browser width- font size using viewport width so that it scales with card widths.*/
-  .trusted-numbers span {
+  .trusted-card .stat {
     font-size: 5.5vw;
   }
 
@@ -125,7 +127,7 @@ div {
 
 /* Large and up (1024px >) */
 @media screen and (min-width: 64em) {
-  .trusted-numbers span {
-    font-size: 58px;
+  .trusted-card .stat {
+    font-size: 3.625rem;
   }
 }

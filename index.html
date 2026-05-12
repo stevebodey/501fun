@@ -10,21 +10,21 @@
       - Three individual cards build as divs, contained within "trusted numbers" div which constrains width to match original image.
     -->
     <div class="trusted-numbers">
-      <div class="guests">
+      <div class="trusted-card guests">
         <!--
           - H tags avoided because I'm uncertain how this fits into your SEO plan.
           - JS animated counter added to stats for movement that draws interest (can easily be removed).
           - Consideration needed for increasing stats becoming too large for containing elements.
         -->
-        <p>More than <br><span id="counter-guests">0</span> <br>delighted guests</p>
+        <p>More than <br><span id="counter-guests" class="stat">0</span> <br>delighted guests</p>
       </div>
-      <div class="countries">
-        <p>Find us in <br><span id="counter-countries">0</span> <br>countries</p>
+      <div class="trusted-card countries">
+        <p>Find us in <br><span id="counter-countries" class="stat">0</span> <br>countries</p>
       </div>
-      <div class="darts">
-        <p>Over <br><span id="counter-darts">0</span> <br>darts thrown</p>
+      <div class="trusted-card darts">
+        <p>Over <br><span id="counter-darts" class="stat">0</span> <br>darts thrown</p>
       </div>
     </div>
+    <script src="js/script.js"></script>
 	</body>
-  <script src="js/script.js"></script>
 </html>
