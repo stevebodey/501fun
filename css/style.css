@@ -29,8 +29,10 @@ body {
   box-sizing: border-box;
 }
 
-/*Container for featured cards to set max width similar to existing image on site.*/
+/*Container for featured cards to set max width similar to existing image on site. Flexbox column used to stack cards on mobile.*/
 .trusted-numbers {
+  display: flex;
+  flex-direction: column;
   max-width: 58.125rem;
   margin: 0 auto;
 	width: 100%;
@@ -94,16 +96,14 @@ body {
 
 /* Medium and up (640px >) */
 @media screen and (min-width: 40em) {
-  /*Styling for all cards. Left float added so that cards sit side-by-side rather than stacking. Right margin added to space cards similarly to original image.*/
-  .trusted-numbers .trusted-card {
-    float: left;
-    margin: 0 1% 0 0;
-    padding: 1.438rem
+  /*Styling for all cards. Flexbox row used so that cards sit side-by-side rather than stacking. Gap adds spaces between cards.*/
+  .trusted-numbers {
+    flex-direction: row;
+    gap: 1%;
   }
 
-  /*Right margin not needed for last card.*/
-  .trusted-numbers .trusted-card:last-of-type {
-    margin-right: 0;
+  .trusted-numbers .trusted-card {
+    padding: 1.438rem
   }
 
   /*Styling for large stats text over 640px browser width- font size using viewport width so that it scales with card widths.*/
